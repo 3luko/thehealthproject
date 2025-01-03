@@ -1,0 +1,18 @@
+.large-tab {
+    padding: 1em;
+    display: grid;
+    justify-content: center;
+}
+
+.input-box-container {
+    outline: solid 3px black;
+    padding: 1em;
+}
+
+.output-box-container{
+    outline: solid 1px green;
+}
+
+
+
+

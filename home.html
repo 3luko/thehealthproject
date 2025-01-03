@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-    <title>Fitness Tracker</title>
-</head>
-<body>
-    <h1>Fitness Tracker</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>TheFitness Project</title>
+  </head>
+  <h1>Fitness Tracker</h1>
+  <body>
+    <div class="large-tab">
+      <div class="input-box-container" id="input-box-container">
+        <button>Goals</button>
+        <button>Current Workout</button>
+        <button>Timer</button><br /><br />
+        <form>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="user-name"
+            name="name"
+            required
+            placeholder="e.g., Johnny Appleseed"
+          /><br /><br />
 
-
-    <button>Goals</button>
-    <button>Current Workout</button>
-    <button>Timer</button>
-    <br><br>
-    <div class="input-box-container" id="input-box-container">
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="user-name" name="name" required placeholder="e.g., Johnny Appleseed"><br><br>
-
-        <label for="gender">Gender:</label>
-        <select name="gender">
-            <option value="none-gender"></option>
+          <label for="gender">Gender:</label>
+          <select id="gender-choice" name="gender" required>
+            <option value="">Select Gender</option>
             <option value="male">Male</option>
             <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select><br><br>
+            <option value="Other">Other</option></select
+          ><br /><br />
 
-        <label for="weight">Weight (lbs):</label>
-        <input type="number" id="weight" name="weight" placeholder="e.g., 150" ><br><br>
+          <label for="weight">Weight (lbs):</label>
+          <input
+            type="number"
+            id="weight"
+            name="weight"
+            placeholder="e.g., 150"
+          /><br /><br />
 
-        <label for="user-age">Age:</label>
-        <input type="number" id="user-age" name="user-age"><br><br>
+          <label for="user-age">Age:</label>
+          <input
+            type="number"
+            id="user-age"
+            name="user-age"
+            required
+          /><br /><br />
 
-        <label for="user-height">Height:</label>
-        <select name="height-feet" id="height-feet">
-            <option value="none-feet"></option>
+          <label for="user-height">Height:</label>
+          <select name="height-feet" id="height-feet">
+            <option value=""></option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
-            <option value="7">7</option>
-            
-        </select>ft
-        <select name="height-inches" id="height-inches">
-            <option value="none-inches"></option>
+            <option value="7">7</option></select
+          >ft
+          <select name="height-inches" id="height-inches">
+            <option value=""></option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -56,25 +68,32 @@
             <option value="8">8</option>
             <option value="9">9</option>
             <option value="10">10</option>
-            <option value="11">11</option>
-        </select>inches<br><br>
+            <option value="11">11</option></select
+          >inches<br /><br />
 
-        <label for="calorie-intake">Calorie intake:</label>
-        <input type="number" id="calories-intake" name="calories-intake"><br><br>
+          <select name="week-amount" id="week-amount" required>
+            <option value=""></option>
+            <option value="week-3">3 weeks</option>
+            <option value="week-6">6 weeks</option>
+            <option value="week-12">12 weeks</option>
+            <option value="week-15">15 weeks</option>
+            <option value="week-20">20 weeks</option>
+            <option value="week-25">25 weeks</option>
+          </select>
 
-        <label for="start-date">Start date:</label>
-        <input type="date" id="start-date" name="start-date">
-
-        <label for="complete-date">Completion Date:</label>
-        <input type="date" id="completion-date" name="complete-date"><br><br>
-
-
-        <button type="submit">Submit</button>
-    </form>
-    </div><br><br>
-
-    <div id="output-box-container" class="output-box-container"></div>
+          <button type="submit">Submit</button>
+        </form>
+        <br />
+        <button type="button" id="calculate-goals-button">
+          Calculate Goals
+        </button>
+      </div>
+      <br /><br />
+      <div id="output-box-container" class="output-box-container">
+        Output Box
+      </div>
+    </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
