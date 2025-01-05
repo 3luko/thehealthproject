@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>TheFitness Project</title>
   </head>
-  <h1>Fitness Tracker</h1>
+  <h1>TheFit Project</h1>
   <body>
     <div class="large-tab">
       <div class="input-box-container" id="input-box-container">
@@ -71,6 +71,7 @@
             <option value="11">11</option></select
           >inches<br /><br />
 
+          <label for="week-amount"><strong>Duration:</strong></label>
           <select name="week-amount" id="week-amount" required>
             <option value=""></option>
             <option value="week-3">3 weeks</option>
@@ -78,7 +79,20 @@
             <option value="week-12">12 weeks</option>
             <option value="week-15">15 weeks</option>
             <option value="week-20">20 weeks</option>
-            <option value="week-25">25 weeks</option>
+            <option value="week-25">25 weeks</option></select
+          ><br /><br />
+
+          <label for="weight-loss"><strong>Weight Lost:</strong></label>
+          <select name="weight-lost" id="weight-lost">
+            <option value=""></option>
+            <option value="5">5 lbs</option>
+            <option value="10">10 lbs</option>
+            <option value="15">15 lbs</option>
+            <option value="20">20 lbs</option>
+            <option value="25">25 lbs</option>
+            <option value="30">30 lbs</option>
+            <option value="35">35 lbs</option>
+            <option value="40">40 lbs</option>
           </select>
 
           <button type="submit">Submit</button>
