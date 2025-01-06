@@ -7,7 +7,7 @@ const height_feet = document.getElementById("height-feet");
 const goals_calc = document.getElementById("calculate-goals-button");
 
 goals_calc.addEventListener("click", function () {
-  console.log(daily_cal_deficit());
+  console.log(calorie_intake());
 });
 
 //function for if non-priority inputs were not put in
@@ -104,15 +104,27 @@ function daily_cal_deficit() {
 
 function tdee() {
   const exercise_rate = Number(document.getElementById("often-exer").value);
+  let finalVal;
   if (exercise_rate == 6) {
-    const tdee = bmr_men() * 1.2;
+    finalVal = bmr_men() * 1.2;
   } else if (exercise_rate == 3) {
-    const tdee = bmr_men() * 1.55;
+    finalVal = bmr_men() * 1.55;
   } else if (exercise_rate == 1) {
-    const tdee = bmr_men() * 1.375;
-    console.log(tdee);
+    finalVal = bmr_men() * 1.375;
   } else {
-    const tdee = bmr_men() * 1.2;
+    finalVal = bmr_men() * 1.2;
   }
-  return tdee;
+  return finalVal;
+}
+
+function calorie_intake(){
+  return tdee() - daily_cal_deficit()
+}
+
+function possibility(){
+  const week_amount = Number(document.getElementById("week-amount").value)
+  const weight_lost = Number(document.getElementById("weight-lost").value)
+  if (weight_lost){
+    
+  }
 }
