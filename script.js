@@ -7,11 +7,7 @@ const height_feet = document.getElementById("height-feet");
 const goals_calc = document.getElementById("calculate-goals-button");
 
 goals_calc.addEventListener("click", function () {
-  // alert("Would you like to input your gender? This information can be crucial to getting the most accurate understanding of what you need to do to complete your goals!")
-  // console.log("Button was clicked!")
-  non_priority_alert();
-  console.log(bmr_men());
-  console.log("after non-priority function call");
+  console.log(daily_cal_deficit());
 });
 
 //function for if non-priority inputs were not put in
@@ -93,15 +89,30 @@ function bmr_men() {
 
   const bmr = weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 + 5;
 
-  return bmr + " " + document.getElementById("user-name").value;
+  return bmr;
 }
 
 function daily_cal_deficit() {
-  const calories = Number(document.getElementById("weight-lost").value) * 3500;
+  let calories = Number(document.getElementById("weight-lost").value) * 3500;
 
   const weeks = Number(document.getElementById("week-amount").value);
 
   calories = calories / weeks;
 
   return calories / 7;
+}
+
+function tdee() {
+  const exercise_rate = Number(document.getElementById("often-exer").value);
+  if (exercise_rate == 6) {
+    const tdee = bmr_men() * 1.2;
+  } else if (exercise_rate == 3) {
+    const tdee = bmr_men() * 1.55;
+  } else if (exercise_rate == 1) {
+    const tdee = bmr_men() * 1.375;
+    console.log(tdee);
+  } else {
+    const tdee = bmr_men() * 1.2;
+  }
+  return tdee;
 }
