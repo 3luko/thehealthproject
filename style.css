@@ -1,18 +1,29 @@
-.large-tab {
+.goals-tab {
     padding: 1em;
     display: grid;
     justify-content: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .input-box-container {
     outline: solid 3px black;
     padding: 1em;
+    border-radius: 25px;
+    background-color: blue;
 }
 
-.output-box-container{
-    outline: solid 1px green;
+body{
+    background-color: darkblue;
 }
 
+.title-div{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:larger;
+    cursor: pointer;
+}
 
-
-
+.result{
+    font-size: large;
+}

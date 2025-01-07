@@ -1,49 +1,46 @@
-const gender = document.getElementById("gender-choice");
-const weight = document.getElementById("weight");
-const age = document.getElementById("user-age");
-const height_inches = document.getElementById("height-inches");
-const height_feet = document.getElementById("height-feet");
+let gender = document.getElementById("gender-choice");
+let weight = document.getElementById("weight");
+let age = document.getElementById("user-age");
+let height_inches = document.getElementById("height-inches");
+let height_feet = document.getElementById("height-feet");
+let exercise_week = document.getElementById("often-exer");
+let week_amount = document.getElementById("week-amount");
+let weight_lost = document.getElementById("weight-lost");
+let output = document.getElementById("output-box-container");
 
 const goals_calc = document.getElementById("calculate-goals-button");
+const clear_goals_button = document.getElementById("clear-input-button");
 
-goals_calc.addEventListener("click", function () {
-  console.log(calorie_intake());
+clear_goals_button.addEventListener("click", function () {
+  gender.value = "";
+  weight.value = "";
+  age.value = "";
+  height_inches.value = "";
+  height_feet.value = "";
+  exercise_week.value = "";
+  week_amount.value = "";
+  weight_lost.value = "";
 });
 
-//function for if non-priority inputs were not put in
-function non_priority_alert() {
-  document.getElementById("weight").style.outline = "none";
-  document.getElementById("user-age").style.outline = "none";
-  document.getElementById("height-inches").style.outline = "none";
-  document.getElementById("height-feet").style.outline = "none";
-  //const user_response;
-  if (weight.value === "") {
-    user_response = confirm("Please input your weight");
-    if (user_response) {
-      document.getElementById("weight").style.outline = "solid 1px red";
-      return;
-    }
-  } else {
-    document.getElementById("weight").style.outline = "none";
-  }
+goals_calc.addEventListener("click", function () {
+  show_calorie_intake();
+});
 
-  if (height_inches.value === "" || height_feet.value === "") {
-    user_response = confirm("Please input your height");
-    if (user_response && height_inches.value === "") {
-      document.getElementById("height-inches").style.outline = "solid 1px red";
-    }
-    if (user_response && height_feet.value === "") {
-      document.getElementById("height-feet").style.outline = "solid 1px red";
-    }
-    return;
+// function for if non-priority inputs were not put in
+function input_fields_filled() {
+  if (
+    isEmpty(gender) ||
+    isEmpty(weight) ||
+    isEmpty(age) ||
+    isEmpty(height_feet) ||
+    isEmpty(height_inches) ||
+    isEmpty(exercise_week) ||
+    isEmpty(week_amount) ||
+    isEmpty(weight_lost)
+  ) {
+    return false;
   } else {
-    //if the inches input is not empty it will change back to red
-    if (!isEmpty(height_inches.value)) {
-      document.getElementById("height-inches").style.outline = "none";
-    }
-    if (!isEmpty(height_feet.value)) {
-      document.getElementById("height-feet").style.outline = "none";
-    }
+    return true;
   }
 }
 
@@ -60,13 +57,13 @@ function bmr_men() {
   let height_cm;
   let weight_kg;
   let age_bmr;
+  let bmr;
 
   if (
     isEmpty(document.getElementById("height-feet")) ||
     isEmpty(document.getElementById("height-inches"))
   ) {
     height_cm = (5 * 12 + 9) * 2.54;
-    //console.log(height);
     //user submitted height
   } else {
     height_cm =
@@ -86,8 +83,14 @@ function bmr_men() {
 
   age_bmr = Number(document.getElementById("user-age").value);
   console.log("Age = " + age_bmr);
-
-  const bmr = weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 + 5;
+  //determining if it is a male or a women to change the calculations.
+  if (gender.value === "male") {
+    bmr = weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 + 5;
+    console.log("math for a man");
+  } else {
+    bmr = weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 - 161;
+    console.log("math for a women");
+  }
 
   return bmr;
 }
@@ -117,14 +120,25 @@ function tdee() {
   return finalVal;
 }
 
-function calorie_intake(){
-  return tdee() - daily_cal_deficit()
+function show_calorie_intake() {
+  //if all the input fields are filled it will output results
+  if (input_fields_filled()) {
+    const calories = Math.round(tdee() - daily_cal_deficit());
+    if (calories < 0) {
+      output.innerHTML = `<p>Seems like this goal is a bit unrealistic, consider tampering with the duration, or changing the the weight lost goal!</p>`;
+    } else {
+      output.innerHTML = `<p>You should consume approximately <strong class="result">${calories} calories/day</strong> to lose ${+document.getElementById(
+        "weight-lost"
+      ).value}
+                            lbs in ${
+                              document.getElementById("week-amount").value
+                            } weeks</p>`;
+    }
+  } else {
+    alert("Please fill out all fields for an accurate output");
+  }
 }
 
-function possibility(){
-  const week_amount = Number(document.getElementById("week-amount").value)
-  const weight_lost = Number(document.getElementById("weight-lost").value)
-  if (weight_lost){
-    
-  }
+function noNewTab() {
+  window.location.href = "home.html";
 }

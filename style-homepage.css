@@ -1,0 +1,32 @@
+.home-page-container{
+    color: white;
+    display:inline-block;
+    /* outline: solid white ; */
+    margin-top: 250px;
+}
+
+body{
+    background-color: darkblue;
+}
+
+.page-title{
+    margin-left: 725px;
+    margin-bottom: 100px;
+    width: 650px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 200px;
+    display: inline-block;
+    /* outline: solid orange 3px; */
+    cursor: pointer;
+    
+}
+
+.button-container{
+    margin-left: 775px;
+    /* outline: solid 3px white; */
+    display: none;
+}
+
+a {
+    margin-right: 50px; 
+}
