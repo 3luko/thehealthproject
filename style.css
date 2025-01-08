@@ -27,3 +27,74 @@ body{
 .result{
     font-size: large;
 }
+
+.schedule-options{
+    outline: solid 3px orange;
+    height: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom:100px;
+    color: orange
+    
+}
+.schedule-container{
+    outline: solid 3px white;
+    border-radius: 10px;
+    height: auto;
+    margin-left: 500px;
+    margin-right: 500px;
+    color: white;
+    height : 400px;
+    padding : 10px;
+}
+
+.calendar-container{
+    /* outline: solid green 3px; */
+    
+
+
+}
+
+.schedule-body{
+    background-color: darkblue;
+}
+
+.calendar-heading{
+    margin-left: 370px;
+
+}
+
+.calendar-calendar{
+    /* outline : white 3px solid; */
+    height : 330px;
+    
+    
+}
+
+table{
+    border-collapse: collapse;
+    text-align:center;
+    width: 900px
+}
+
+th, td{
+    margin-right: 10px;
+    outline: solid white 3px;
+    border: 1px solid blue;
+    padding: 2px
+}
+
+tr:nth-child(even){
+    background-color: blue;
+
+
+}
+
+.exercise-calendar{
+    background-color: blue;
+    color : white;
+    border-radius: 5px;
+}
+
+
+

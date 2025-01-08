@@ -18,13 +18,13 @@ body{
     display: inline-block;
     /* outline: solid orange 3px; */
     cursor: pointer;
-    
 }
 
 .button-container{
     margin-left: 775px;
     /* outline: solid 3px white; */
     display: none;
+    
 }
 
 a {

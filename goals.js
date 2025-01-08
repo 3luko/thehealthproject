@@ -59,6 +59,7 @@ function bmr_men() {
   let age_bmr;
   let bmr;
 
+
   if (
     isEmpty(document.getElementById("height-feet")) ||
     isEmpty(document.getElementById("height-inches"))
@@ -87,9 +88,11 @@ function bmr_men() {
   if (gender.value === "male") {
     bmr = weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 + 5;
     console.log("math for a man");
-  } else {
+  } else if (gender.value === "female") {
     bmr = weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 - 161;
     console.log("math for a women");
+  } else {
+    bmr = (weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 + 5) + (weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 - 161) / 2
   }
 
   return bmr;
