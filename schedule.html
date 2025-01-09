@@ -16,202 +16,227 @@
   </head>
   <body class="schedule-body">
     <h1 class="title-div" onclick="noNewTab()">the health project...</h1>
-    <div class="schedule-options">shedule options</div>
-    <div class="schedule-container">
-      <div class="calendar-container">
-        <h3 class="calendar-heading">Week Schedule</h3>
-        <table class="calendar-calendar">
-          <tr>
-            <th>Day</th>
-            <th>Date</th>
-            <th>Split Type</th>
-            <th>Completed</th>
-            <th>Notes</th>
-          </tr>
-          <tr>
-            <td>Monday</td>
-            <td class="date-cell" id="monday-cell">1/6</td>
-            <td>
-              <select class="exercise-calendar" id="monday-select">
-                <option value="">No Exercise</option>
-                <option value="chest">Full Chest</option>
-                <option value="arms">Full Arms</option>
-                <option value="legs">Full Legs</option>
-                <option value="back">Full Back</option>
-                <option value="body">Full Body</option>
-                <option value="shoulders">Full Shoulders</option>
-                <option value="back-bi">Back n' Biceps</option>
-                <option value="chest-tri">Chest n' Triceps</option>
-                <option value="chest-shoulder">Chest and Shoulders</option>
-                <option value="back-shoulder">Back and Shoulders</option>
-                <option value="arms-shoulder">Arms and Shoulders</option>
-                <option value="push">Push</option>
-                <option value="pull">Pull</option>
-                <option value="upper">Upper</option>
-                <option value="lower">Lower</option>
-              </select>
-            </td>
-            <td><input id="monday-check" type="checkbox" /></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Tuesday</td>
-            <td class="date-cell" id="tuesday-cell">1/7</td>
-            <td>
-              <select class="exercise-calendar" id="tuesday-select">
-                <option value="">No Exercise</option>
-                <option value="chest">Full Chest</option>
-                <option value="arms">Full Arms</option>
-                <option value="legs">Full Legs</option>
-                <option value="back">Full Back</option>
-                <option value="body">Full Body</option>
-                <option value="shoulders">Full Shoulders</option>
-                <option value="back-bi">Back n' Biceps</option>
-                <option value="chest-tri">Chest n' Triceps</option>
-                <option value="chest-shoulder">Chest and Shoulders</option>
-                <option value="back-shoulder">Back and Shoulders</option>
-                <option value="arms-shoulder">Arms and Shoulders</option>
-                <option value="push">Push</option>
-                <option value="pull">Pull</option>
-                <option value="upper">Upper</option>
-                <option value="lower">Lower</option>
-              </select>
-            </td>
-            <td><input id="tuesday-check" type="checkbox" /></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td class="date-cell" id="wednesday-cell">1/8</td>
-            <td>
-              <select class="exercise-calendar" id="wednesday-select">
-                <option value="">No Exercise</option>
-                <option value="chest">Full Chest</option>
-                <option value="arms">Full Arms</option>
-                <option value="legs">Full Legs</option>
-                <option value="back">Full Back</option>
-                <option value="body">Full Body</option>
-                <option value="shoulders">Full Shoulders</option>
-                <option value="back-bi">Back n' Biceps</option>
-                <option value="chest-tri">Chest n' Triceps</option>
-                <option value="chest-shoulder">Chest and Shoulders</option>
-                <option value="back-shoulder">Back and Shoulders</option>
-                <option value="arms-shoulder">Arms and Shoulders</option>
-                <option value="push">Push</option>
-                <option value="pull">Pull</option>
-                <option value="upper">Upper</option>
-                <option value="lower">Lower</option>
-              </select>
-            </td>
-            <td><input id="wednesday-check" type="checkbox" /></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Thursday</td>
-            <td class="date-cell" id="thursday-cell">1/9</td>
-            <td>
-              <select class="exercise-calendar" id="thursday-select">
-                <option value="">No Exercise</option>
-                <option value="chest">Full Chest</option>
-                <option value="arms">Full Arms</option>
-                <option value="legs">Full Legs</option>
-                <option value="back">Full Back</option>
-                <option value="body">Full Body</option>
-                <option value="shoulders">Full Shoulders</option>
-                <option value="back-bi">Back n' Biceps</option>
-                <option value="chest-tri">Chest n' Triceps</option>
-                <option value="chest-shoulder">Chest and Shoulders</option>
-                <option value="back-shoulder">Back and Shoulders</option>
-                <option value="arms-shoulder">Arms and Shoulders</option>
-                <option value="push">Push</option>
-                <option value="pull">Pull</option>
-                <option value="upper">Upper</option>
-                <option value="lower">Lower</option>
-              </select>
-            </td>
-            <td><input id="thursday-check" type="checkbox" /></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Friday</td>
-            <td class="date-cell" id="friday-cell">1/10</td>
-            <td>
-              <select class="exercise-calendar" id="friday-select">
-                <option value="">No Exercise</option>
-                <option value="chest">Full Chest</option>
-                <option value="arms">Full Arms</option>
-                <option value="legs">Full Legs</option>
-                <option value="back">Full Back</option>
-                <option value="body">Full Body</option>
-                <option value="shoulders">Full Shoulders</option>
-                <option value="back-bi">Back n' Biceps</option>
-                <option value="chest-tri">Chest n' Triceps</option>
-                <option value="chest-shoulder">Chest and Shoulders</option>
-                <option value="back-shoulder">Back and Shoulders</option>
-                <option value="arms-shoulder">Arms and Shoulders</option>
-                <option value="push">Push</option>
-                <option value="pull">Pull</option>
-                <option value="upper">Upper</option>
-                <option value="lower">Lower</option>
-              </select>
-            </td>
-            <td><input id="friday-check" type="checkbox" /></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td class="date-cell" id="saturday-cell">1/11</td>
-            <td>
-              <select class="exercise-calendar" id="saturday-select">
-                <option value="">No Exercise</option>
-                <option value="chest">Full Chest</option>
-                <option value="arms">Full Arms</option>
-                <option value="legs">Full Legs</option>
-                <option value="back">Full Back</option>
-                <option value="body">Full Body</option>
-                <option value="shoulders">Full Shoulders</option>
-                <option value="back-bi">Back n' Biceps</option>
-                <option value="chest-tri">Chest n' Triceps</option>
-                <option value="chest-shoulder">Chest and Shoulders</option>
-                <option value="back-shoulder">Back and Shoulders</option>
-                <option value="arms-shoulder">Arms and Shoulders</option>
-                <option value="push">Push</option>
-                <option value="pull">Pull</option>
-                <option value="upper">Upper</option>
-                <option value="lower">Lower</option>
-              </select>
-            </td>
-            <td><input id="saturday-check" type="checkbox" /></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Sunday</td>
-            <td class="date-cell" id="sunday-cell">1/12</td>
-            <td>
-              <select class="exercise-calendar" id="sunday-select">
-                <option value="">No Exercise</option>
-                <option value="chest">Full Chest</option>
-                <option value="arms">Full Arms</option>
-                <option value="legs">Full Legs</option>
-                <option value="back">Full Back</option>
-                <option value="body">Full Body</option>
-                <option value="shoulders">Full Shoulders</option>
-                <option value="back-bi">Back n' Biceps</option>
-                <option value="chest-tri">Chest n' Triceps</option>
-                <option value="chest-shoulder">Chest and Shoulders</option>
-                <option value="back-shoulder">Back and Shoulders</option>
-                <option value="arms-shoulder">Arms and Shoulders</option>
-                <option value="push">Push</option>
-                <option value="pull">Pull</option>
-                <option value="upper">Upper</option>
-                <option value="lower">Lower</option>
-              </select>
-            </td>
-            <td><input id="sunday-check" type="checkbox" /></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
+    <div class="schedule-options">
+      <button id="tester-Button">javascript tester button</button>
+    </div>
+    <div class="schedule-container" id="schedule-container">
+      <h3 class="schedule-heading" id="schedule-heading">Week Schedule</h3>
+      <table class="calendar-calendar" id="calendar-table">
+        <tr>
+          <th>Day</th>
+          <th>Date</th>
+          <th>Split Type</th>
+          <th>Workouts</th>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td class="date-cell" id="monday-cell"></td>
+          <td>
+            <select class="exercise-calendar" id="monday-select">
+              <option value="">No Exercise</option>
+              <option value="chest">Full Chest</option>
+              <option value="arms">Full Arms</option>
+              <option value="legs">Full Legs</option>
+              <option value="back">Full Back</option>
+              <option value="body">Full Body</option>
+              <option value="shoulders">Full Shoulders</option>
+              <option value="back-bi">Back n' Biceps</option>
+              <option value="chest-tri">Chest n' Triceps</option>
+              <option value="chest-shoulder">Chest and Shoulders</option>
+              <option value="back-shoulder">Back and Shoulders</option>
+              <option value="arms-shoulder">Arms and Shoulders</option>
+              <option value="push">Push</option>
+              <option value="pull">Pull</option>
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+            </select>
+          </td>
+          <td>
+            <button class="log-button" id="monday-log-button">
+              Log Workout
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td class="date-cell" id="tuesday-cell"></td>
+          <td>
+            <select class="exercise-calendar" id="tuesday-select">
+              <option value="">No Exercise</option>
+              <option value="chest">Full Chest</option>
+              <option value="arms">Full Arms</option>
+              <option value="legs">Full Legs</option>
+              <option value="back">Full Back</option>
+              <option value="body">Full Body</option>
+              <option value="shoulders">Full Shoulders</option>
+              <option value="back-bi">Back n' Biceps</option>
+              <option value="chest-tri">Chest n' Triceps</option>
+              <option value="chest-shoulder">Chest and Shoulders</option>
+              <option value="back-shoulder">Back and Shoulders</option>
+              <option value="arms-shoulder">Arms and Shoulders</option>
+              <option value="push">Push</option>
+              <option value="pull">Pull</option>
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+            </select>
+          </td>
+          <td>
+            <button class="log-button" id="tuesday-log-button">
+              Log Workout
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td class="date-cell" id="wednesday-cell"></td>
+          <td>
+            <select class="exercise-calendar" id="wednesday-select">
+              <option value="">No Exercise</option>
+              <option value="chest">Full Chest</option>
+              <option value="arms">Full Arms</option>
+              <option value="legs">Full Legs</option>
+              <option value="back">Full Back</option>
+              <option value="body">Full Body</option>
+              <option value="shoulders">Full Shoulders</option>
+              <option value="back-bi">Back n' Biceps</option>
+              <option value="chest-tri">Chest n' Triceps</option>
+              <option value="chest-shoulder">Chest and Shoulders</option>
+              <option value="back-shoulder">Back and Shoulders</option>
+              <option value="arms-shoulder">Arms and Shoulders</option>
+              <option value="push">Push</option>
+              <option value="pull">Pull</option>
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+            </select>
+          </td>
+
+          <td>
+            <button class="log-button" id="wednesday-log-button">
+              Log Workout
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td class="date-cell" id="thursday-cell"></td>
+          <td>
+            <select class="exercise-calendar" id="thursday-select">
+              <option value="">No Exercise</option>
+              <option value="chest">Full Chest</option>
+              <option value="arms">Full Arms</option>
+              <option value="legs">Full Legs</option>
+              <option value="back">Full Back</option>
+              <option value="body">Full Body</option>
+              <option value="shoulders">Full Shoulders</option>
+              <option value="back-bi">Back n' Biceps</option>
+              <option value="chest-tri">Chest n' Triceps</option>
+              <option value="chest-shoulder">Chest and Shoulders</option>
+              <option value="back-shoulder">Back and Shoulders</option>
+              <option value="arms-shoulder">Arms and Shoulders</option>
+              <option value="push">Push</option>
+              <option value="pull">Pull</option>
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+            </select>
+          </td>
+
+          <td>
+            <button class="log-button" id="thursday-log-button">
+              Log Workout
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td class="date-cell" id="friday-cell"></td>
+          <td>
+            <select class="exercise-calendar" id="friday-select">
+              <option value="">No Exercise</option>
+              <option value="chest">Full Chest</option>
+              <option value="arms">Full Arms</option>
+              <option value="legs">Full Legs</option>
+              <option value="back">Full Back</option>
+              <option value="body">Full Body</option>
+              <option value="shoulders">Full Shoulders</option>
+              <option value="back-bi">Back n' Biceps</option>
+              <option value="chest-tri">Chest n' Triceps</option>
+              <option value="chest-shoulder">Chest and Shoulders</option>
+              <option value="back-shoulder">Back and Shoulders</option>
+              <option value="arms-shoulder">Arms and Shoulders</option>
+              <option value="push">Push</option>
+              <option value="pull">Pull</option>
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+            </select>
+          </td>
+
+          <td>
+            <button class="log-button" id="friday-log-button">
+              Log Workout
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td class="date-cell" id="saturday-cell"></td>
+          <td>
+            <select class="exercise-calendar" id="saturday-select">
+              <option value="">No Exercise</option>
+              <option value="chest">Full Chest</option>
+              <option value="arms">Full Arms</option>
+              <option value="legs">Full Legs</option>
+              <option value="back">Full Back</option>
+              <option value="body">Full Body</option>
+              <option value="shoulders">Full Shoulders</option>
+              <option value="back-bi">Back n' Biceps</option>
+              <option value="chest-tri">Chest n' Triceps</option>
+              <option value="chest-shoulder">Chest and Shoulders</option>
+              <option value="back-shoulder">Back and Shoulders</option>
+              <option value="arms-shoulder">Arms and Shoulders</option>
+              <option value="push">Push</option>
+              <option value="pull">Pull</option>
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+            </select>
+          </td>
+
+          <td>
+            <button class="log-button" id="saturday-log-button">
+              Log Workout
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td class="date-cell" id="sunday-cell"></td>
+          <td>
+            <select class="exercise-calendar" id="sunday-select">
+              <option value="">No Exercise</option>
+              <option value="chest">Full Chest</option>
+              <option value="arms">Full Arms</option>
+              <option value="legs">Full Legs</option>
+              <option value="back">Full Back</option>
+              <option value="body">Full Body</option>
+              <option value="shoulders">Full Shoulders</option>
+              <option value="back-bi">Back n' Biceps</option>
+              <option value="chest-tri">Chest n' Triceps</option>
+              <option value="chest-shoulder">Chest and Shoulders</option>
+              <option value="back-shoulder">Back and Shoulders</option>
+              <option value="arms-shoulder">Arms and Shoulders</option>
+              <option value="push">Push</option>
+              <option value="pull">Pull</option>
+              <option value="upper">Upper</option>
+              <option value="lower">Lower</option>
+            </select>
+          </td>
+
+          <td>
+            <button class="log-button" id="sunday-log-button">
+              Log Workout
+            </button>
+          </td>
+        </tr>
+      </table>
     </div>
 
     <script src="schedule-page.js"></script>

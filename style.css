@@ -34,7 +34,7 @@ body{
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom:100px;
-    color: orange
+    color: white
     
 }
 .schedule-container{
@@ -46,21 +46,15 @@ body{
     color: white;
     height : 400px;
     padding : 10px;
-}
-
-.calendar-container{
-    /* outline: solid green 3px; */
-    
-
-
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .schedule-body{
     background-color: darkblue;
 }
 
-.calendar-heading{
-    margin-left: 370px;
+.schedule-heading{
+    margin-left: 37%;
 
 }
 
@@ -74,27 +68,41 @@ body{
 table{
     border-collapse: collapse;
     text-align:center;
-    width: 900px
+    width: 100%;
 }
 
-th, td{
-    margin-right: 10px;
-    outline: solid white 3px;
-    border: 1px solid blue;
-    padding: 2px
-}
+ th, td{
+    /* margin-right: 2%; */
+    /* outline: solid white 3px; */
+    /* padding: 5px */
+} 
+
 
 tr:nth-child(even){
-    background-color: blue;
-
-
+    background-color: #0000ff6e;
 }
 
 .exercise-calendar{
     background-color: blue;
     color : white;
     border-radius: 5px;
+    outline: invert;
 }
 
+.exercise-calendar{
+    border-color: transparent;
+}
+
+.log-button{
+    display: none;
+    margin-left: 25%;
+    font-size: 15px;
+
+}
+
+th{
+    
+    font-size: large;
+}
 
 

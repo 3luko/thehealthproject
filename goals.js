@@ -59,7 +59,6 @@ function bmr_men() {
   let age_bmr;
   let bmr;
 
-
   if (
     isEmpty(document.getElementById("height-feet")) ||
     isEmpty(document.getElementById("height-inches"))
@@ -92,7 +91,12 @@ function bmr_men() {
     bmr = weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 - 161;
     console.log("math for a women");
   } else {
-    bmr = (weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 + 5) + (weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 - 161) / 2
+    bmr =
+      weight_kg * 10 +
+      6.25 * height_cm -
+      age_bmr * 5 +
+      5 +
+      (weight_kg * 10 + 6.25 * height_cm - age_bmr * 5 - 161) / 2;
   }
 
   return bmr;
@@ -130,7 +134,7 @@ function show_calorie_intake() {
     if (calories < 0) {
       output.innerHTML = `<p>Seems like this goal is a bit unrealistic, consider tampering with the duration, or changing the the weight lost goal!</p>`;
     } else {
-      output.innerHTML = `<p>You should consume approximately <strong class="result">${calories} calories/day</strong> to lose ${+document.getElementById(
+      output.innerHTML = `<p>You should consume an approximate maximum of <strong class="result">${calories} calories/day</strong> to lose ${+document.getElementById(
         "weight-lost"
       ).value}
                             lbs in ${
