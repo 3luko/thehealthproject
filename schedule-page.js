@@ -48,6 +48,7 @@ function logworkout() {
       scheduleHeading.style.marginLeft = "35%";
     });
   }
+  
 }
 
 //Automatically add dates to cell regardless of days in the week.

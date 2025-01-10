@@ -58,11 +58,16 @@ body{
 
 }
 
-.calendar-calendar{
+.calendar-table{
     /* outline : white 3px solid; */
     height : 330px;
+    /* display : none; */
     
     
+}
+
+.heading h5 {
+    display: inline-block;
 }
 
 table{
