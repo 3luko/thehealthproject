@@ -17,7 +17,13 @@
   <body class="schedule-body">
     <h1 class="title-div" onclick="noNewTab()">the health project...</h1>
     <div class="schedule-options">
-      <button id="tester-Button">javascript tester button</button>
+      <div id="schedule-options-content">
+        <h5>Add Workout</h5>
+        <input id="workout-name" class="workout-input" type="text" placeholder="Workout Name" /><br>
+        <input id="number-of-sets" class="workout-input" type="number" placeholder="Number of Sets"><br>
+        <input id="number-of-reps" class="workout-input" type="number" placeholder="Number of Reps/Set">
+        <button id="workout-submit-button" class="btn btn-success" type="submit" onclick="workout_to_container()">Add Workout</button>
+      </div>
     </div>
     <div class="schedule-container" id="schedule-container">
       <h3 class="schedule-heading" id="schedule-heading">Week Schedule</h3>
@@ -34,6 +40,7 @@
           <td>
             <select class="exercise-calendar" id="monday-select">
               <option value="">No Exercise</option>
+              <option value="custom">Custom</option>
               <option value="chest">Full Chest</option>
               <option value="arms">Full Arms</option>
               <option value="legs">Full Legs</option>
@@ -64,6 +71,7 @@
           <td>
             <select class="exercise-calendar" id="tuesday-select">
               <option value="">No Exercise</option>
+              <option value="custom">Custom</option>
               <option value="chest">Full Chest</option>
               <option value="arms">Full Arms</option>
               <option value="legs">Full Legs</option>
@@ -94,6 +102,7 @@
           <td>
             <select class="exercise-calendar" id="wednesday-select">
               <option value="">No Exercise</option>
+              <option value="custom">Custom</option>
               <option value="chest">Full Chest</option>
               <option value="arms">Full Arms</option>
               <option value="legs">Full Legs</option>
@@ -125,6 +134,7 @@
           <td>
             <select class="exercise-calendar" id="thursday-select">
               <option value="">No Exercise</option>
+              <option value="custom">Custom</option>
               <option value="chest">Full Chest</option>
               <option value="arms">Full Arms</option>
               <option value="legs">Full Legs</option>
@@ -156,6 +166,7 @@
           <td>
             <select class="exercise-calendar" id="friday-select">
               <option value="">No Exercise</option>
+              <option value="custom">Custom</option>
               <option value="chest">Full Chest</option>
               <option value="arms">Full Arms</option>
               <option value="legs">Full Legs</option>
@@ -187,6 +198,7 @@
           <td>
             <select class="exercise-calendar" id="saturday-select">
               <option value="">No Exercise</option>
+              <option value="custom">Custom</option>
               <option value="chest">Full Chest</option>
               <option value="arms">Full Arms</option>
               <option value="legs">Full Legs</option>
@@ -218,6 +230,7 @@
           <td>
             <select class="exercise-calendar" id="sunday-select">
               <option value="">No Exercise</option>
+              <option value="custom">Custom</option>
               <option value="chest">Full Chest</option>
               <option value="arms">Full Arms</option>
               <option value="legs">Full Legs</option>
@@ -244,9 +257,16 @@
           </td>
         </tr>
       </table>
-      <div class="heading"><h5>Add Workout</h5><h5>eido</h5></div>
-      <div>dd</div>
-      <div>dd</div>
+
+      <div class="user-workouts-container" id="user-workouts-container"><h5>Your Workouts</h5>
+      <!-- <div class="user-workouts">
+        <div class="workouts-p"><p>Workout</p></div>
+        <div class="workouts-p"><p>Sets</p></div>
+        <div class="workouts-p"><p>Reps</p></div>
+        <button type="button" id="delete-workout" class="btn btn-danger">Delete workout</button>
+      </div> -->
+     
+    </div>
     </div>
 
     <script src="schedule-page.js"></script>
