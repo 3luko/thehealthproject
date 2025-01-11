@@ -17,6 +17,22 @@ body{
     background-color: darkblue;
 }
 
+.workouts-p{
+    display : inline-block;
+    width: 27%;
+    /* outline: solid 2px white; */
+    
+}
+
+#delete-workout{
+    font-size: x-small;
+}
+
+.user-workouts{
+    outline : solid 1px white;
+    text-align: left;
+}
+
 .title-div{
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -28,14 +44,32 @@ body{
     font-size: large;
 }
 
+.workout-input{
+    border-radius: 5px;
+    font-size: smaller;
+    margin-bottom: 1%;
+    width: 200px;
+}
+
+#workout-submit-button{
+    background-color: rgb(2, 179, 2);
+    /* border-radius: 5px; */
+    font-size: smaller;
+}
+
+
 .schedule-options{
-    outline: solid 3px orange;
-    height: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
+    outline: solid 1px white;
+    border-radius: 10px;
+    height: 150px;
+    margin-left: 27%;
+    margin-right: 27%;
     margin-bottom:100px;
-    color: white
-    
+    color: white;
+    box-shadow: 5px 5px 5px rgb(0, 0, 70);
+    background-color: rgb(2, 2, 130);
+    padding: 10px;
+
 }
 .schedule-container{
     outline: solid 3px white;
@@ -61,7 +95,7 @@ body{
 .calendar-table{
     /* outline : white 3px solid; */
     height : 330px;
-    /* display : none; */
+    display : none;
     
     
 }
@@ -75,12 +109,6 @@ table{
     text-align:center;
     width: 100%;
 }
-
- th, td{
-    /* margin-right: 2%; */
-    /* outline: solid white 3px; */
-    /* padding: 5px */
-} 
 
 
 tr:nth-child(even){

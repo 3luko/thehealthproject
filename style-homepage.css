@@ -1,8 +1,10 @@
 .home-page-container{
     color: white;
-    display:inline-block;
+    /* display:inline-block; */
     /* outline: solid white ; */
-    margin-top: 250px;
+    margin-top: 20%;
+    margin-left: 38%;
+    margin-right: 29%;
 }
 
 body{
@@ -10,23 +12,28 @@ body{
 }
 
 .page-title{
-    margin-left: 725px;
+    
     margin-bottom: 100px;
-    width: 650px;
+    width: auto;
     font-family: 'Courier New', Courier, monospace;
-    margin-right: 200px;
+    
     display: inline-block;
     /* outline: solid orange 3px; */
     cursor: pointer;
+
 }
 
 .button-container{
-    margin-left: 775px;
+    
     /* outline: solid 3px white; */
     display: none;
+    /* outline : white solid */
+    margin-left: 10%;
+
     
 }
 
 a {
     margin-right: 50px; 
+    /* display : inline-block; */
 }
