@@ -1,4 +1,13 @@
-const testerButton = document.getElementById("tester-Button");
+const workoutSubmit = document.getElementById("workout-submit-button");
+//function for when workout submit button is selected
+workoutSubmit.addEventListener("click", () => {
+  workout_to_container(
+    document.getElementById("workout-name"),
+    document.getElementById("number-of-sets"),
+    document.getElementById("number-of-reps")
+  );
+});
+
 const days = [
   "monday",
   "tuesday",
@@ -9,9 +18,6 @@ const days = [
   "sunday",
 ];
 
-testerButton.addEventListener("click", () => {
-  console.log("Tester Button Pressed");
-});
 generateWeekSchedule();
 showLogButton();
 logworkout();
@@ -46,6 +52,10 @@ function logworkout() {
         days[i].charAt(0).toUpperCase() + days[i].slice(1)
       }'s Schedule`;
       scheduleHeading.style.marginLeft = "35%";
+      document.getElementById("user-workouts-container").style.display =
+        "block";
+      document.getElementById("show-workout-button-container").style.display =
+        "block";
     });
   }
 }
@@ -124,46 +134,59 @@ function isEmpty(word) {
   }
 }
 
-function workout_to_container() {
-  const name = document.getElementById("workout-name");
-  const sets = document.getElementById("number-of-sets");
-  const reps = document.getElementById("number-of-reps");
-
+function workout_to_container(name, sets, reps) {
   if (isEmpty(name) || isEmpty(sets) || isEmpty(reps)) {
     alert("Please input all values");
   } else {
-
     var newDiv = document.createElement("div");
     newDiv.classList.add("user-workouts");
-
-
 
     const workout_name_div = document.createElement("div");
     workout_name_div.classList.add("workouts-p");
     const workout_p = document.createElement("p");
-    workout_p.textContent = `${name.value}`
-    workout_name_div.appendChild(workout_p)
+    workout_p.textContent = ` ${
+      document.getElementById("user-workouts-container").childElementCount
+    }. ${name.value}`;
+    workout_name_div.appendChild(workout_p);
     newDiv.appendChild(workout_name_div);
-    
 
-    const sets_div = document.createElement("div");
-    sets_div.classList.add("workouts-p");
-    const sets_p = document.createElement("p");
-    sets_p.textContent = `${sets.value}`
-    sets_div.appendChild(sets_p)
-    newDiv.appendChild(sets_div);
-
-    const reps_div = document.createElement("div");
-    reps_div.classList.add("workouts-p");
-    const reps_p = document.createElement("p");
-    reps_p.textContent = `${reps.value}`
-    reps_div.appendChild(reps_p)
-    newDiv.appendChild(reps_div);
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete Workout";
+    deleteButton.classList.add("delete-workout-button");
+    deleteButton.addEventListener("click", () => {
+      newDiv.remove();
+      renumberWorkouts();
+    });
+    newDiv.appendChild(deleteButton);
 
     document.getElementById("user-workouts-container").appendChild(newDiv);
 
     document.getElementById("workout-name").value = "";
     document.getElementById("number-of-sets").value = "";
     document.getElementById("number-of-reps").value = "";
+    document.getElementById("schedule-options").style.display = "none";
+
+    return {
+      name,
+      reps,
+      sets,
+    };
   }
 }
+
+function renumberWorkouts() {
+  const workoutContainers = document.querySelectorAll(
+    "#user-workouts-container .user-workouts"
+  );
+  workoutContainers.forEach((container, index) => {
+    const workout_p = container.querySelector(".workouts-p p");
+    workout_p.textContent = `${index + 1}. ${
+      workout_p.textContent.split(". ")[1]
+    }`;
+  });
+}
+
+const addWorkoutButton = document.getElementById("show-add-workout");
+addWorkoutButton.addEventListener("click", () => {
+  document.getElementById("schedule-options").style.display = "block";
+});

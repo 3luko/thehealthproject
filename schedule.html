@@ -16,13 +16,48 @@
   </head>
   <body class="schedule-body">
     <h1 class="title-div" onclick="noNewTab()">the health project...</h1>
-    <div class="schedule-options">
+    <div class="schedule-options" id="schedule-options">
       <div id="schedule-options-content">
-        <h5>Add Workout</h5>
-        <input id="workout-name" class="workout-input" type="text" placeholder="Workout Name" /><br>
-        <input id="number-of-sets" class="workout-input" type="number" placeholder="Number of Sets"><br>
-        <input id="number-of-reps" class="workout-input" type="number" placeholder="Number of Reps/Set">
-        <button id="workout-submit-button" class="btn btn-success" type="submit" onclick="workout_to_container()">Add Workout</button>
+        <h5 class="add-workout-title">Add Workout</h5>
+        <label for="suggested-workouts">Suggested workouts?</label>
+        <input type="checkbox" id="suggested-workouts" name="suggested-workouts"><br>
+        
+        <label for="workout-name">Workout Name</label>
+        <input
+          name="workout-name"
+          id="workout-name"
+          class="workout-input"
+          type="text"
+          placeholder="Chest Press..."
+        />
+        <br />
+        <label for="number-of-sets">Number of Sets:</label>
+        <select id="number-of-sets" name="number-of-sets" class="workout-options">
+          <option value=""></option>
+          <option value="1">1 Set</option>
+          <option value="2">2 Sets</option>
+          <option value="3">3 Sets</option>
+          <option value="4">4 Sets</option>
+          <option value="5">5 Sets</option>
+          <option value="6">6 Sets</option>
+          <option value="7">7 Sets</option>
+          <option value="8">8 Sets</option></select
+        ><br />
+        <label for="number-of-reps">Number of Reps</label>
+        <select id="number-of-reps" name="number-of-reps" class="workout-options">
+          <option value=""></option>
+          <option value="6">6 Reps</option>
+          <option value="8">8 Reps</option>
+          <option value="12">12 Reps</option>
+          <option value="failure">Until Failure</option>
+        </select>
+        <button
+          id="workout-submit-button"
+          class="btn btn-success"
+          type="submit"
+        >
+          Add Workout
+        </button>
       </div>
     </div>
     <div class="schedule-container" id="schedule-container">
@@ -258,15 +293,16 @@
         </tr>
       </table>
 
-      <div class="user-workouts-container" id="user-workouts-container"><h5>Your Workouts</h5>
-      <!-- <div class="user-workouts">
+      <div class="user-workouts-container" id="user-workouts-container">
+        <h5>Your Workouts</h5>
+        <!-- <div class="user-workouts">
         <div class="workouts-p"><p>Workout</p></div>
         <div class="workouts-p"><p>Sets</p></div>
         <div class="workouts-p"><p>Reps</p></div>
         <button type="button" id="delete-workout" class="btn btn-danger">Delete workout</button>
       </div> -->
-     
-    </div>
+      </div>
+      <div class="show-workout-button-container" id="show-workout-button-container"><button class="show-add-workout" id="show-add-workout">Add Workout?</button> <button id="save-entry" class="save-entry-button">Save Entry</button></div>
     </div>
 
     <script src="schedule-page.js"></script>
