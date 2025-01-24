@@ -6,7 +6,8 @@ workoutSubmit.addEventListener("click", () => {
   workout_to_container(
     document.getElementById("workout-name"),
     document.getElementById("number-of-sets"),
-    document.getElementById("number-of-reps")
+    document.getElementById("number-of-reps"),
+    document.getElementById("workout-duration")
   );
 });
 
@@ -20,7 +21,7 @@ weeklySchedule.addEventListener("click", () => {
   document.getElementById("schedule-heading").style.display = "block";
   document.getElementById("schedule-heading").innerHTML = "Week Schedule";
   console.log("menu button has been clicked");
-  console.log(document.getElementById("calendar-table").style);
+  
 });
 
 const days = [
@@ -108,39 +109,6 @@ function generateWeekSchedule() {
   return daysofWeek;
 }
 
-function autocomplete(inp, arr) {
-  var currentFocus;
-
-  inp.addEventListener("input", function (e) {
-    var a,
-      b,
-      i,
-      val = this.value;
-    closeAllLists();
-    if (!val) {
-      return false;
-    }
-    currentFocus = -1;
-    a = document.createElement("DIV");
-    a.setAttribute("id", this.id + "autocomplete-list");
-    a.setAttribute("class", "autocomplete-items");
-    this.parentNode.appendChild(a);
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-        b = document.createElement("DIV");
-        b.innerHTML = `<strong>${arr[i].substr(0, val.length)}</strong>`;
-        b.innerHTML += arr[i].substr(val.length);
-        b.innerHTML += `<input type="hidden" value='${arr[i]}'`;
-        b.addEventListener("click", function (e) {
-          inp.value = this.getElementsByTagName("input")[0].value;
-          closeAllLists;
-        });
-        a.appendChild(b);
-      }
-    }
-  });
-}
-
 function isEmpty(word) {
   if (word.value === "") {
     return true;
@@ -149,8 +117,8 @@ function isEmpty(word) {
   }
 }
 
-function workout_to_container(name, sets, reps) {
-  if (isEmpty(name) || isEmpty(sets) || isEmpty(reps)) {
+function workout_to_container(name, sets, reps, duration) {
+  if (isEmpty(name) || isEmpty(sets) || isEmpty(reps) || isEmpty(duration)) {
     alert("Please input all values");
   } else {
     var newDiv = document.createElement("div");
@@ -179,12 +147,14 @@ function workout_to_container(name, sets, reps) {
     document.getElementById("workout-name").value = "";
     document.getElementById("number-of-sets").value = "";
     document.getElementById("number-of-reps").value = "";
+    document.getElementById("workout-duration").value = "";
     document.getElementById("schedule-options").style.display = "none";
 
     return {
       name,
       reps,
       sets,
+      duration
     };
   }
 }
