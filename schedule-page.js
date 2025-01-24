@@ -1,3 +1,5 @@
+console.log(document.getElementById("calendar-table").style);
+
 const workoutSubmit = document.getElementById("workout-submit-button");
 //function for when workout submit button is selected
 workoutSubmit.addEventListener("click", () => {
@@ -6,6 +8,19 @@ workoutSubmit.addEventListener("click", () => {
     document.getElementById("number-of-sets"),
     document.getElementById("number-of-reps")
   );
+});
+
+const weeklySchedule = document.getElementById("back-to-menu");
+weeklySchedule.addEventListener("click", () => {
+  document.getElementById("schedule-options").style.display = "none";
+  document.getElementById("user-workouts-container").style.display = "none";
+  document.getElementById("show-workout-button-container").style.display =
+    "none";
+  document.getElementById("calendar-table").style.display = "table";
+  document.getElementById("schedule-heading").style.display = "block";
+  document.getElementById("schedule-heading").innerHTML = "Week Schedule";
+  console.log("menu button has been clicked");
+  console.log(document.getElementById("calendar-table").style);
 });
 
 const days = [
@@ -190,3 +205,6 @@ const addWorkoutButton = document.getElementById("show-add-workout");
 addWorkoutButton.addEventListener("click", () => {
   document.getElementById("schedule-options").style.display = "block";
 });
+
+//Depending on the day, I am creating an object holding that value
+function workoutsDay() {}

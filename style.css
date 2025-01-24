@@ -76,18 +76,26 @@ body{
     font-style: italic;
 }
 
+.duration-input:placeholder-shown{
+    font-style: italic;
+}
+
+.duration-input{
+    font-size: smaller;
+}
 
 .schedule-options{
     outline: solid 1px white;
     border-radius: 10px;
-    height: 150px;
-    margin-left: 27%;
-    margin-right: 27%;
+    height: 185px;
+    margin-left: 35%;
+    margin-right: 35%;
     margin-bottom:100px;
     color: white;
     box-shadow: 5px 5px 5px rgb(0, 0, 70);
     background-color: rgb(2, 2, 130);
     padding: 10px;
+    /* display: block; */
 }
 .schedule-container{
     outline: solid 3px white;
@@ -100,6 +108,7 @@ body{
     height : 400px;
     padding : 10px;
     font-family: 'Courier New', Courier, monospace;
+    
 }
 
 .schedule-options{
@@ -112,7 +121,14 @@ body{
 
 .schedule-heading{
     margin-left: 37%;
+    
 
+}
+
+.back-to-menu-button{
+    border-radius: 5px;
+    background-color: red;
+    color: rgb(255, 255, 255);
 }
 
 .add-workout-title{
@@ -123,6 +139,7 @@ body{
 .calendar-table{
     /* outline : white 3px solid; */
     height : 330px;
+  
     /* display : block; */
 }
 /* important */
