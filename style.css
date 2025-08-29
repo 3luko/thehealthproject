@@ -53,6 +53,36 @@ body{
     font-size: smaller;
 }
 
+.timer-container{
+    /* outline: solid white 3px; */
+    color: white; 
+    margin-top: 8%;
+    padding: 3%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.timer-buttons{
+    /* outline: solid 5px white; */
+    margin-top: 3%;
+    padding-left: 43%;
+}
+.timer-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(#4caf50 var(--percent), #ddd 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: lightblue;
+  outline: solid 3px lightblue;
+  margin-left: 40%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .save-entry-button{
     background-color: grey;
     font-size: smaller;
