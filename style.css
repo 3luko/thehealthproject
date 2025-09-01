@@ -68,8 +68,8 @@ body{
     padding-left: 43%;
 }
 .timer-circle {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background: conic-gradient(#4caf50 var(--percent), #ddd 0);
   display: flex;
@@ -79,7 +79,7 @@ body{
   font-weight: bold;
   color: lightblue;
   outline: solid 3px lightblue;
-  margin-left: 40%;
+  margin-left: 35%;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -94,6 +94,7 @@ body{
     /* border-radius: 5px; */
     font-size: smaller;
 }
+
 
 .show-add-workout{
     background-color: rgb(2, 179, 2);
