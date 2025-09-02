@@ -147,5 +147,5 @@ function show_calorie_intake() {
 }
 
 function noNewTab() {
-  window.location.href = "home.html";
+  window.location.href = "/";
 }
