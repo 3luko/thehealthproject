@@ -1,3 +1,26 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("")
+mongoose.connect("mongodb://localhost:27017/healthDB")
+.then(() => {
+    console.log("connected to mongoDB");
+})
+.catch(() => {
+    console.log("failed to connect");
+})
+
+
+const LoginSchema = new mongoose.Schema({
+    username:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    }
+})
+
+const collection = new mongoose.model("Collection1", LoginSchema)
+
+module.exports = collection
+

@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const path = require("path")
 const hbs = require("hbs")
+const collection = require("./database")
 
 const viewsPath = path.join(__dirname, '../views')
 const publicPath = path.join(__dirname, '../public')
@@ -15,6 +16,7 @@ app.use(express.static(srcPath))
 app.use(express.json())
 app.set("view engine", "hbs")
 app.set("views", viewsPath)
+app.use(express.urlencoded({extended:false}))
 
 
 //going to the home page
@@ -35,6 +37,26 @@ app.get("/goals.html", (req, res) =>{
 //going to the timer page
 app.get("/timer.html", (req, res) =>{
     res.render("timer")
+})
+
+app.get("/schedule", (req, res) =>{
+    res.render("schedule")
+})
+
+app.get("/signup", (req, res) =>{
+    res.render("signup")
+})
+
+app.post("/signup", async (req, res) => {
+    const data = {
+        uname:req.body.name,
+        pwd:req.body.name
+    }
+
+    await collection.insertMany([data])
+    res.render("home")
+
+
 })
 
 app.listen(3000, () =>{

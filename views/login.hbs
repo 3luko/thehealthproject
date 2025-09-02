@@ -18,8 +18,7 @@
     <main>
             <h1 class="title-div" onclick="noNewTab()">the health project...</h1>
             <div class="login-container">
-                <form id="login-form">
-
+                <form action="/login" method="post">
                     <h2 class="login-title">Login</h2>
                     <div class="form-container">
                         <label for="uname"><b>Username</b></label>
@@ -27,14 +26,14 @@
                         <br>
                         <br>
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" required>
+                        <input type="password" placeholder="Enter Password" name="pwd" required>
          
                         <button type="submit">Login</button>
                         <br>
                         <br>
                         Or
                         <br>
-                        <button type="button">Create Account</button>
+                        <a href="/signup" class="btn btn-primary">Create Account</a>
                     </div>
 
                 </form>
