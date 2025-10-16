@@ -20,6 +20,12 @@
             <div class="login-container">
                 <form action="/signup" method="post">
                     <h2 class="login-title">Create Account</h2>
+
+                    {{#if error}}
+                      <p class="alert alert-danger" role="alert">
+                          {{error}}
+                      </p>
+                    {{/if}}
                     <div class="form-container">
                         <label for="uname"><b>Username</b></label>
                         <input type="text" placeholder="Enter Username" name="uname" required>
@@ -30,10 +36,8 @@
          
                         <button type="submit">Join Us!</button>
                         <br>
-                        <br>
-                        Or
-                        <br>
-                        <a href="/login" class="btn btn-primary">Login</a>
+
+                        <a href="/schedule" class="btn btn-primary">Login</a>
                     </div>
 
                 </form>

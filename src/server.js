@@ -2,17 +2,18 @@ const express = require("express")
 const app = express()
 const path = require("path")
 const hbs = require("hbs")
-const collection = require("./database")
+const User = require("./database")
+
+
 
 const viewsPath = path.join(__dirname, '../views')
 const publicPath = path.join(__dirname, '../public')
 const pagesPath = path.join(__dirname, '../pages')
 const srcPath = path.join(__dirname, '../src')
 
-
+app.use(express.static(srcPath))
 app.use(express.static(pagesPath))
 app.use(express.static(publicPath))
-app.use(express.static(srcPath))
 app.use(express.json())
 app.set("view engine", "hbs")
 app.set("views", viewsPath)
@@ -23,8 +24,6 @@ app.use(express.urlencoded({extended:false}))
 app.get("/", (req, res) =>{
     res.render("home")
 })
-
-
 
 //going to the login page
 app.get("/login", (req, res) =>{
@@ -47,17 +46,34 @@ app.get("/signup", (req, res) =>{
     res.render("signup")
 })
 
+
 app.post("/signup", async (req, res) => {
-    const data = {
-        uname:req.body.name,
-        pwd:req.body.name
+    const { uname, pwd } = req.body;
+
+    try {
+
+        const existUser = await User.findOne({ username: uname})
+
+        if(existUser){
+            return res.render("signup", { error: "Username already exists. Please log in instead." });
+        }
+
+
+
+        const data = {
+        username:req.body.uname,
+        password:req.body.pwd
+        }
+
+        await User.create(data);
+        console.log("New user added: ", data.username);
+        res.render("home");
+        
+    } catch (error) {
+        console.error(error);
+        res.send("Error signing up");      
     }
-
-    await collection.insertMany([data])
-    res.render("home")
-
-
-})
+});
 
 app.listen(3000, () =>{
     console.log("port connected")

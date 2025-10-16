@@ -14,7 +14,7 @@ const timerCircleElement = document.querySelector(".timer-circle");
 let timerText = timerCircleElement.textContent;
 let time = parseInt(timerText, 10)
 
-console.log(timerText)
+
 
 
 function timer(){

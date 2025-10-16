@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/healthDB")
+mongoose.connect("mongodb://localhost:27017/health")
 .then(() => {
     console.log("connected to mongoDB");
 })
@@ -9,10 +9,11 @@ mongoose.connect("mongodb://localhost:27017/healthDB")
 })
 
 
-const LoginSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username:{
         type:String,
-        required:true
+        required:true,
+        unique: true,
     },
     password:{
         type:String,
@@ -20,7 +21,6 @@ const LoginSchema = new mongoose.Schema({
     }
 })
 
-const collection = new mongoose.model("Collection1", LoginSchema)
+const User = mongoose.model("User", userSchema)
 
-module.exports = collection
-
+module.exports = User
