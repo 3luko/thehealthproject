@@ -57,9 +57,6 @@ app.post("/signup", async (req, res) => {
         if(existUser){
             return res.render("signup", { error: "Username already exists. Please log in instead." });
         }
-
-
-
         const data = {
         username:req.body.uname,
         password:req.body.pwd

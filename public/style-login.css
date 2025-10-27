@@ -1,0 +1,177 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.schedule-body {
+    background-color: darkblue;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+main {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.title-div {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: 40px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.title-div:hover {
+    transform: scale(1.02);
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container label {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0d6efd;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-container input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-container button[type="submit"] {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #198754;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .schedule-body {
+        padding: 15px;
+    }
+    
+    .login-container {
+        padding: 25px 20px;
+    }
+    
+    .login-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .form-container {
+        gap: 15px;
+    }
+    
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-body {
+        padding: 10px;
+    }
+    
+    .login-container {
+        padding: 20px 15px;
+    }
+    
+    .login-title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .title-div {
+        margin-bottom: 30px;
+    }
+    
+    .form-container label {
+        font-size: 1rem;
+    }
+    
+    .form-container button[type="submit"],
+    .btn-primary {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+}
