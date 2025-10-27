@@ -73,7 +73,7 @@ app.post("/signup", async (req, res) => {
 
         await User.create(data);
         console.log("New user added: ", data.username);
-        res.render("home");
+        res.render("schedule");
         
     } catch (error) {
         console.error(error);

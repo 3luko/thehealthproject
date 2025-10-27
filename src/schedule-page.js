@@ -1,5 +1,7 @@
 console.log(document.getElementById("calendar-table").style);
 
+
+
 const workoutSubmit = document.getElementById("workout-submit-button");
 //function for when workout submit button is selected
 workoutSubmit.addEventListener("click", () => {
@@ -39,7 +41,7 @@ showLogButton();
 logworkout();
 
 function noNewTab() {
-  window.location.href = "home.html";
+  window.location.href = "/";
 }
 
 //function for showing the log button based on if you are going to do a workout or not
@@ -75,6 +77,7 @@ function logworkout() {
     });
   }
 }
+
 
 //Automatically add dates to cell regardless of days in the week.
 function generateWeekSchedule() {

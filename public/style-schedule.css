@@ -1,0 +1,303 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.schedule-body {
+    background-color: darkblue;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.title-div {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.title-div:hover {
+    transform: scale(1.02);
+}
+
+.schedule-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.calendar-table th,
+.calendar-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calendar-table th {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.calendar-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.exercise-calendar {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.exercise-calendar:focus {
+    outline: none;
+    border-color: #0d6efd;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.exercise-calendar option {
+    background-color: darkblue;
+    color: white;
+}
+
+.log-button {
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.log-button:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.date-cell {
+    font-weight: 600;
+    color: #0dcaf0;
+}
+
+.schedule-options {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.add-workout-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.schedule-options label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.workout-input,
+.workout-options,
+.duration-input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.workout-input:focus,
+.workout-options:focus,
+.duration-input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.workout-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.workout-options option {
+    background-color: darkblue;
+    color: white;
+}
+
+#workout-submit-button {
+    background-color: #198754;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#workout-submit-button:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-workouts-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.user-workouts-container h5 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.show-workout-button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.show-add-workout,
+.save-entry-button,
+.back-to-menu-button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.show-add-workout:hover,
+.save-entry-button:hover,
+.back-to-menu-button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.save-entry-button {
+    background-color: #198754;
+}
+
+.save-entry-button:hover {
+    background-color: #157347;
+}
+
+.back-to-menu-button {
+    background-color: #6c757d;
+}
+
+.back-to-menu-button:hover {
+    background-color: #5c636a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .schedule-body {
+        padding: 15px;
+    }
+    
+    .schedule-container,
+    .schedule-options,
+    .user-workouts-container {
+        padding: 20px 15px;
+    }
+    
+    .calendar-table th,
+    .calendar-table td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+    
+    .exercise-calendar,
+    .log-button {
+        font-size: 0.85rem;
+    }
+    
+    .show-workout-button-container {
+        gap: 10px;
+    }
+    
+    .show-add-workout,
+    .save-entry-button,
+    .back-to-menu-button {
+        min-width: 120px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-body {
+        padding: 10px;
+    }
+    
+    .calendar-table {
+        font-size: 0.8rem;
+    }
+    
+    .calendar-table th,
+    .calendar-table td {
+        padding: 8px 6px;
+    }
+    
+    .show-workout-button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .show-add-workout,
+    .save-entry-button,
+    .back-to-menu-button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
