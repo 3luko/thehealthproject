@@ -3,6 +3,7 @@ const app = express()
 const path = require("path")
 const hbs = require("hbs")
 const User = require("./database")
+const bcrypt = require('bcrypt');
 
 
 
@@ -52,15 +53,23 @@ app.post("/signup", async (req, res) => {
 
     try {
 
+        //Checking if the user already exists
         const existUser = await User.findOne({ username: uname})
 
+        //If the user exists, send an error
         if(existUser){
             return res.render("signup", { error: "Username already exists. Please log in instead." });
         }
+
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(pwd, saltRounds);
+
+        //if user doesn't exist it will store data into a object
         const data = {
         username:req.body.uname,
-        password:req.body.pwd
+        password: hashedPassword
         }
+
 
         await User.create(data);
         console.log("New user added: ", data.username);
@@ -71,6 +80,34 @@ app.post("/signup", async (req, res) => {
         res.send("Error signing up");      
     }
 });
+
+
+app.post("/login", async(req, res) => {
+    const {uname, pwd} = req.body;
+
+    try {
+        const existUser = await User.findOne({ username: uname});
+
+        if(!existUser){
+            return res.render("login", { error: "Username doesn't exist in our database. Please try again."})
+        }
+
+        const isPasswordValid = await bcrypt.compare(pwd, existUser.password);
+
+        if(!isPasswordValid){
+            return res.render("login", { error: "Incorrect password. Please try again." })
+        }
+
+        console.log("User login successful!");
+        res.render("schedule");
+
+
+
+    } catch (err){
+        console.error(error);
+        res.send("Error Logging in");
+    }
+})
 
 app.listen(3000, () =>{
     console.log("port connected")
