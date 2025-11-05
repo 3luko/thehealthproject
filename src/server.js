@@ -4,6 +4,7 @@ const path = require("path")
 const hbs = require("hbs")
 const User = require("./database")
 const bcrypt = require('bcrypt');
+const session = require('express-session')
 
 
 
@@ -19,6 +20,12 @@ app.use(express.json())
 app.set("view engine", "hbs")
 app.set("views", viewsPath)
 app.use(express.urlencoded({extended:false}))
+app.use(session({
+    secret: "cheesebaconandlettuce",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60} //1 hour session max
+}))
 
 
 //going to the home page
@@ -27,9 +34,16 @@ app.get("/", (req, res) =>{
 })
 
 //going to the login page
-app.get("/login", (req, res) =>{
-    res.render("login")
-})
+app.get("/login", (req, res) => {
+  if (req.session.user && req.session.user.loggedIn) {
+    // User is already logged in, no need to show login form again
+    return res.redirect("/schedule");
+  }
+
+  console.log("Login GET works")
+  // Otherwise, show the login page
+  res.render("login");
+});
 //going to the goals page
 app.get("/goals.html", (req, res) =>{
     res.render("goals")
@@ -40,7 +54,11 @@ app.get("/timer.html", (req, res) =>{
 })
 
 app.get("/schedule", (req, res) =>{
-    res.render("schedule")
+    if(!req.session.user || !req.session.user.loggedIn){
+        return res.redirect("/login")
+    }
+    console.log("schedule GET works")
+    res.render("schedule", {username: req.session.user.username})
 })
 
 app.get("/signup", (req, res) =>{
@@ -86,8 +104,10 @@ app.post("/login", async(req, res) => {
     const {uname, pwd} = req.body;
 
     try {
+        //Checking user exist within database using the "User"
         const existUser = await User.findOne({ username: uname});
 
+        //True or false
         if(!existUser){
             return res.render("login", { error: "Username doesn't exist in our database. Please try again."})
         }
@@ -99,7 +119,16 @@ app.post("/login", async(req, res) => {
         }
 
         console.log("User login successful!");
-        res.render("schedule");
+
+        req.session.user = {
+            id: existUser._id,
+            username: existUser.username,
+            loggedIn: true
+        }
+
+        console.log(req.session.user.username)
+        console.log(req.session.user.loggedIn)
+        res.redirect("/schedule");
 
 
 
@@ -108,6 +137,19 @@ app.post("/login", async(req, res) => {
         res.send("Error Logging in");
     }
 })
+
+
+// app.get("/login", (req, res) => {
+//   if (req.session.user && req.session.user.loggedIn) {
+//     // User is already logged in, no need to show login form again
+//     return res.redirect("/schedule");
+//   }
+
+//   console.log()
+//   // Otherwise, show the login page
+//   res.render("login");
+// });
+
 
 app.listen(3000, () =>{
     console.log("port connected")
